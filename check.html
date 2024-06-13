@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar Example</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTTXJg6T+2M2H4PpXzz2pS3mJ9u8/YoHEVV+9hg6nLDqC9C80eGHiMuLt1E7cxldKrJ2w1Cw5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .section-navbar {
+      position: -webkit-sticky; /* For Safari */
+      position: sticky;
+      top: 0;
+      z-index: 1000; /* Ensures it stays above other content */
+      background-color: white; /* Ensures it has a background color */
+      border-bottom: 1px solid #ccc; /* Optional: Adds a border for visual separation */
+    }
+
+    .head-top {
+      background-color: #f8f8f8;
+      padding: 10px 0;
+    }
+
+    .head.container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .head-text p {
+      margin: 0;
+    }
+
+    .sign-up-log-in a {
+      margin-left: 10px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .head-below {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    .brand-logo p {
+      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .navbar {
+      display: flex;
+    }
+
+    .nav-items {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .nav-items li {
+      margin-right: 20px;
+    }
+
+    .nav-items a {
+      text-decoration: none;
+      color: #333;
+      padding: 5px 10px;
+    }
+
+    .nav-items a:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header class="section-navbar">
+    <section class="head-top">
+      <div class="head container">
+        <div class="head-text">
+          <p>Free Shipping 30 day free refund policy</p>
+        </div>
+        <div class="sign-up-log-in">
+          <a href="#">Sign Up</a>
+          <a href="#">Log In</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="head-below">
+      <div class="brand-logo">
+        <!-- <img src="./images/logo.png" alt="logo" height="auto" width="%"> -->
+        <p>Logo</p>
+      </div>
+
+      <nav class="navbar">
+        <ul class="nav-items">
+          <li><a href="/">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li>
+            <a href="addtocart.html" id="navbar-count" aria-label="Shopping Cart">
+              <i class="fas fa-cart-shopping"></i> 0
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section style="height: 1000px;">
+      <p>Scroll down to see the sticky/fixed navbar in action.</p>
+    </section>
+  </main>
+</body>
+</html>
