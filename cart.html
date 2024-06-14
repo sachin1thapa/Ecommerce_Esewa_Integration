@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Website </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header class="section-navabar">
+        <section class="head-top">
+            <div class="head container">
+                <div class="head-text">
+                    <p>Free Shiping 30 day free refund policy </p>
+                </div>
+                <div class="sign_up_log_in">
+                    <a href="#">sign_up</a>
+                    <a href="#">log_in</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="head-below">
+            <div class="brand-logo">
+                <!-- <img src=". /images/logo.png" alt="logo" height="auto" width="%"> -->
+                logo
+
+            </div>
+
+            <div class="navbar">
+                <li class="nav-items">
+                    <a href="/">Home</a>
+                </li>
+                <li class="nav-items">
+                    <a href="about.html">About</a>
+                </li>
+                <li class="nav-items">
+                    <a href="product.html">Product</a>
+                </li>
+                <li class="nav-items">
+                    <a href="contact.html">Contact</a>
+                </li>
+                <li class="nav-items">
+                    <a href="addtocart.html" id="navbar-count">
+                        <i class="fa-solid fa-cart-shopping"></i> 0
+                    </a>
+                </li>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <div class="cart-container">
+        <div class="cart-item">
+            <div class="cart-item-category">Wearables</div>
+            <div class="image">
+                <img src="images/laptop.jpg" alt="Watches">
+            </div>
+            <div class="cart-item-details">
+                <div class="cart-item-name">Watches</div>
+            </div>
+            <div class="cart-item-price">₹199.99</div>
+            <div class="cart-item-quantity">
+                <button>-</button>
+                <p>1</p>
+                <button>+</button>
+            </div>
+            <button class="cart-item-remove">Remove</button>
+        </div>
+        <div class="cart-item">
+            <div class="cart-item-category">Wearables</div>
+            <div class="image">
+                <img src="images/laptop.jpg" alt="Watches">
+            </div>
+            <div class="cart-item-details">
+                <div class="cart-item-name">Watches</div>
+            </div>
+            <div class="cart-item-price">₹199.99</div>
+            <div class="cart-item-quantity">
+                <button>-</button>
+                <p>1</p>
+                <button>+</button>
+            </div>
+            <button class="cart-item-remove">Remove</button>
+        </div>
+    </div>
+
+
+    <template id="productTemplate">
+
+    </template>
+
+
+    <!--! cart summary  -->
+    <div class="cart-summary">
+        <div class="summary-item">Sub Total: <span>₹348</span></div>
+        <div class="summary-item">Shipping: <span>₹0</span></div>
+        <div class="summary-item" id="line">Tax: <span>₹50</span></div>
+        <div class="summary-item">Final Total: <span>₹398</span></div>
+    </div>
+
+
+</body>
+
+</html>
