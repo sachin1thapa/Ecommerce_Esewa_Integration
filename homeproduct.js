@@ -24,17 +24,17 @@ export const homeProductcard = (products) => {
       productClone.querySelector('.productPrice').textContent = `$${price}`;
       productClone.querySelector('.productActualPrice').textContent = `$${price * 4}`;
 
-      productClone.querySelector('.cards').setAttribute('id', `card${index+1}`);
+      productClone.querySelector('.cards').setAttribute('id', `card${index + 1}`);
 
       // button click
       productClone.querySelector('.stockElement').addEventListener('click', (e) => {
-        tooglestock(e, index, stock);
+        tooglestock(e, index + 1, stock);
       });
 
       // addto cart
 
       productClone.querySelector('.add-to-cart-button').addEventListener('click', (e) => {
-        addtocart(e, index, price);
+        addtocart(e, index + 1, price);
       });
       productContainer.append(productClone);
     });

@@ -2,7 +2,7 @@ import { localStorageUpdate } from './localStorageUpdate';
 import { updateNabbarCount } from './updateNabbarCount';
 
 export const addtocart = (e, index, price) => {
-  let card = document.querySelector(`#card${index + 1}`);
+  let card = document.querySelector(`#card${index}`);
   if (!card) return;
 
   let localStorageData = localStorageUpdate();
@@ -31,6 +31,8 @@ export const addtocart = (e, index, price) => {
     // console.log(update);
 
     localStorageUpdate(update);
+  card.querySelector('.productQuantity').textContent = '0';
+
   }
 
   if (existingProduct.length > 0) return;

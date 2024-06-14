@@ -1,6 +1,6 @@
 export const tooglestock = (e, index, stock) => {
   e.stopPropagation();
-  let card = document.querySelector(`#card${index + 1}`);
+  let card = document.querySelector(`#card${index}`);
   if (!card) return;
   else {
     let itemsAdd = parseInt(card.querySelector('.productQuantity').textContent);
