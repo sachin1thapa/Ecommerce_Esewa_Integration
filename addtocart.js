@@ -1,4 +1,5 @@
 import { localStorageUpdate } from './localStorageUpdate';
+import { tooglepopUp } from './tooglepopUp';
 import { updateNabbarCount } from './updateNabbarCount';
 
 export const addtocart = (e, index, price) => {
@@ -30,15 +31,30 @@ export const addtocart = (e, index, price) => {
     });
     // console.log(update);
 
-    localStorageUpdate(update);
-  card.querySelector('.productQuantity').textContent = '0';
-
+    updatedata(card, update);
+    
+    // localStorageUpdate(update);
+    // card.querySelector('.productQuantity').textContent = '0';
+    // tooglepopUp(card);
   }
 
   if (existingProduct.length > 0) return;
 
   localStorageData.push({ index, quantity, totalPrice });
   if (quantity !== 0) localStorageUpdate(localStorageData);
-  updateNabbarCount();
-  card.querySelector('.productQuantity').textContent = '0';
+  updatedata(card);
+
+  // updateNabbarCount();
+  // card.querySelector('.productQuantity').textContent = '0';
+  // tooglepopUp(card);
+
+  function updatedata(card, update) {
+    updateNabbarCount();
+    card.querySelector('.productQuantity').textContent = '0';
+    tooglepopUp(card);
+    if (update) {
+      localStorageUpdate(update);
+      console.log('inside upadte');
+    }
+  }
 };

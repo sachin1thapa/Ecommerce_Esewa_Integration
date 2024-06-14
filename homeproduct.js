@@ -5,6 +5,7 @@
 
 import { addtocart } from './addtocart';
 import { tooglestock } from './tooglestock';
+import { updateNabbarCount } from './updateNabbarCount';
 
 const productContainer = document.querySelector('#productContainer');
 const template = document.querySelector('#productTemplate');
@@ -38,5 +39,8 @@ export const homeProductcard = (products) => {
       });
       productContainer.append(productClone);
     });
+
+    updateNabbarCount();
   }
+
 };

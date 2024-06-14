@@ -1,96 +1,35 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Popup container - can be anything you want */
-    .popup {
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    /* The actual popup */
-    .popup .popuptext {
-      visibility: hidden;
-      width: 160px;
-      background-color: #555;
-      color: #fff;
-      text-align: center;
-      border-radius: 6px;
-      padding: 8px 0;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      margin-left: -80px;
-    }
-
-    /* Popup arrow */
-    .popup .popuptext::after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      margin-left: -5px;
-      border-width: 5px;
-      border-style: solid;
-      border-color: #555 transparent transparent transparent;
-    }
-
-    /* Toggle this class - hide and show the popup */
-    .popup .show {
-      visibility: visible;
-      -webkit-animation: fadeIn 1s;
-      animation: fadeIn 1s;
-    }
-
-    /* Add animation (fade in the popup) */
-    @-webkit-keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
+    /* Popup container */
+    myPopup
   </style>
+  <title>Popup Example</title>
 </head>
+<body style="text-align: center; margin-top: 50px;">
 
-<body style="text-align:center">
+  <h2>Popup Example</h2>
 
-  <h2>Popup</h2>
-
-  <div class="popup" onclick="myFunction()">Click me to toggle the popup!
-    <span class="popuptext" id="myPopup">A Simple Popup!</span>
+  <div class="popup" onclick="togglePopup()">
+    Click me to toggle the popup!
+    <span class="popuptext" id="myPopup">A Better Popup!</span>
   </div>
 
   <script>
-    // When the user clicks on div, open the popup
-    function myFunction() {
-      var popup = document.getElementById("myPopup");
+    function togglePopup() {
+      var popup = document.getElementById("myPopup").parentElement;
       popup.classList.toggle("show");
 
-      setTimeout(function () { popup.classList.toggle("show"); }, 3000);
+      if (popup.classList.contains("show")) {
+        setTimeout(function() {
+          popup.classList.remove("show");
+        }, 3000);
+      }
     }
   </script>
 
 </body>
-
 </html>
