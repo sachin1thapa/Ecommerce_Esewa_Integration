@@ -6,5 +6,5 @@ import { updateNabbarCount } from './updateNabbarCount';
 
 // ! display the product items in the home 
 homeProductcard(products);
-updateNabbarCount()
+updateNabbarCount();
 

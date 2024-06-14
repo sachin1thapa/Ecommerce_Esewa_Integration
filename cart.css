@@ -28,7 +28,8 @@
 }
 
 .cart-item-category {
-    width: fit-content;
+    width: 110px;
+    /* max-width: 200px; */
     border: none;
     outline: none;
     border-radius: 18px;
@@ -36,6 +37,9 @@
     background-color: aqua;
     margin-right: 50px;
     /* font-size: x-small; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cart-item-name {
@@ -125,10 +129,11 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: #f9f9f9;
-    width: 50%;
-    margin: 0 auto;
-    font-size: 30px;
-    gap: 10px ;
+    width: 40%;
+    margin: 0 auto 200px auto;
+    font-size: 20px;
+    gap: 10px;
+
 }
 
 .summary-item {
