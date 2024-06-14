@@ -1,5 +1,5 @@
 export const updateNabbarCount = () => {
-  console.log("object");
+  // console.log("object");
   let count = JSON.parse(localStorage.getItem('products')) || 0;
   if(count!==0) count = count.length
   document.querySelector(
