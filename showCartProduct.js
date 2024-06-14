@@ -1,5 +1,6 @@
-import { CartIncrementDecrement } from './CartIncrementDecrement';
 import product from './api/product.json';
+import { CartIncrementDecrement } from './CartIncrementDecrement';
+import { RemoveFromCart } from './RemoveFromCart';
 import { fetchLSdata } from './fetchLSdata';
 import { localStorageUpdate } from './localStorageUpdate';
 import { updateNabbarCount } from './updateNabbarCount';
@@ -15,8 +16,8 @@ const template = document.querySelector('#productTemplate');
 
 if (product && FilterData) {
   FilterData.forEach((products, index) => {
-    const { category, image, name, price, stock , id} = products;
-    let LSdata = fetchLSdata(id , price);
+    const { category, image, name, price, stock, id } = products;
+    let LSdata = fetchLSdata(id, price);
     // console.log(LSdata);
     const productClone = document.importNode(template.content, true);
     productClone.querySelector('.cart-item-category').textContent = category;
@@ -35,39 +36,17 @@ if (product && FilterData) {
       CartIncrementDecrement(e, index);
     });
 
+    // remove the product from the cart
+    productClone.querySelector('.cart-item-remove').addEventListener('click', (e) => {
+      RemoveFromCart(e, index + 1, id);
+    });
+
     productContainer.append(productClone);
   });
 }
 
 updateNabbarCount();
-
-updateTotalprice()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+updateTotalprice();
 
 // ! different filtering techniques
 // let FilterData = product.filter((e) => {
