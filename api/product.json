@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Laptop",
     "category": "Computers",
-    "brand": "ExampleBrand",
+    "brand": "Acer Nitro",
     "price": 999.99,
     "stock": 5,
     "description": "Powerful laptop with a quad-core i5 processor, 8GB RAM, 256GB SSD, and a 14-inch FHD display.",
@@ -197,6 +197,56 @@
     "price": 49.99,
     "stock": 75,
     "description": "Wireless keyboard with full-size layout and quiet keys.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Smart Plug",
+    "category": "Smart Home",
+    "brand": "HomeControl",
+    "price": 14.99,
+    "stock": 100,
+    "description": "Smart plug with remote control and energy monitoring features.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 22,
+    "name": "Security Camera",
+    "category": "Smart Home",
+    "brand": "HomeSecure",
+    "price": 79.99,
+    "stock": 30,
+    "description": "Indoor security camera with 1080p resolution, night vision, and motion detection.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Smart Thermostat",
+    "category": "Smart Home",
+    "brand": "HomeControl",
+    "price": 129.99,
+    "stock": 20,
+    "description": "Smart thermostat with Wi-Fi connectivity and voice control compatibility.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Robot Vacuum",
+    "category": "Smart Home",
+    "brand": "HomeClean",
+    "price": 249.99,
+    "stock": 10,
+    "description": "Robot vacuum with smart navigation, self-charging, and app control.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 25,
+    "name": "Smart Scale",
+    "category": "Smart Home",
+    "brand": "FitTech",
+    "price": 39.99,
+    "stock": 50,
+    "description": "Smart scale with body composition analysis and Bluetooth connectivity.",
     "image": "images/laptop.jpg"
   }
 ]

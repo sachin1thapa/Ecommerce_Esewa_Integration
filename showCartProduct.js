@@ -33,7 +33,7 @@ if (product && FilterData) {
 
     // button click garda
     productClone.querySelector('.cart-item-quantity').addEventListener('click', (e) => {
-      CartIncrementDecrement(e, index);
+      CartIncrementDecrement(e, index, price, stock, id);
     });
 
     // remove the product from the cart

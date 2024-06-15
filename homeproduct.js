@@ -21,7 +21,8 @@ export const homeProductcard = (products) => {
       productClone.querySelector('.productStock').textContent = stock;
       productClone.querySelector('.productDescription').textContent = description;
       productClone.querySelector('.productPrice').textContent = `$${price}`;
-      productClone.querySelector('.productActualPrice').textContent = `$${price * 3}`;
+
+      productClone.querySelector('.productActualPrice').textContent = `$${(price * 2).toFixed(2)}`;
 
       productClone.querySelector('.cards').setAttribute('id', `card${index + 1}`);
 
