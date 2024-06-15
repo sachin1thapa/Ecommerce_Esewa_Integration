@@ -20,8 +20,10 @@ export const addtocart = (e, index, price) => {
 
   if (existingProduct.length > 0 && quantity > 0) {
     quantity = existingProduct[0].quantity + quantity;
-    totalPrice = parseInt(price * quantity);
+    totalPrice = parseInt(price * quantity).toFixed(2);
     let updatedData = { index, quantity, totalPrice };
+
+    // updating the local storage if the item is already present then only update it price or if not add the whole product
     let update = localStorageData.map((items) => {
       if (items.index === index) {
         return updatedData;
@@ -32,29 +34,22 @@ export const addtocart = (e, index, price) => {
     // console.log(update);
 
     updatedata(card, update);
-    
-    // localStorageUpdate(update);
-    // card.querySelector('.productQuantity').textContent = '0';
-    // tooglepopUp(card);
   }
 
   if (existingProduct.length > 0) return;
 
+  // first time push garda
   localStorageData.push({ index, quantity, totalPrice });
   if (quantity !== 0) localStorageUpdate(localStorageData);
   updatedata(card);
 
-  // updateNabbarCount();
-  // card.querySelector('.productQuantity').textContent = '0';
-  // tooglepopUp(card);
-
   function updatedata(card, update) {
+    if (quantity > 0) tooglepopUp(card);
     updateNabbarCount();
     card.querySelector('.productQuantity').textContent = '0';
-    tooglepopUp(card);
     if (update) {
       localStorageUpdate(update);
-      console.log('inside upadte');
+      // console.log('inside upadte');
     }
   }
 };

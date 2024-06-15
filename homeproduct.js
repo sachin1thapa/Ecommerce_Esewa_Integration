@@ -1,5 +1,3 @@
-/** @format */
-
 //*  https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
 // !templete le fragment banau cha
 
@@ -23,7 +21,7 @@ export const homeProductcard = (products) => {
       productClone.querySelector('.productStock').textContent = stock;
       productClone.querySelector('.productDescription').textContent = description;
       productClone.querySelector('.productPrice').textContent = `$${price}`;
-      productClone.querySelector('.productActualPrice').textContent = `$${price * 4}`;
+      productClone.querySelector('.productActualPrice').textContent = `$${price * 3}`;
 
       productClone.querySelector('.cards').setAttribute('id', `card${index + 1}`);
 
@@ -42,5 +40,4 @@ export const homeProductcard = (products) => {
 
     updateNabbarCount();
   }
-
 };
