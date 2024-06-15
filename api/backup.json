@@ -1,0 +1,303 @@
+[
+  {
+    "id": 1,
+    "name": "Laptop",
+    "category": "Computers",
+    "brand": "Acer Nitro",
+    "price": 999.99,
+    "stock": 5,
+    "description": "Powerful laptop with a quad-core i5 processor, 8GB RAM, 256GB SSD, and a 14-inch FHD display.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Smartphone",
+    "category": "Mobiles",
+    "brand": "TechGadget",
+    "price": 499.99,
+    "stock": 100,
+    "image": "images/hdd.jpg",
+    "description": "Feature-rich smartphone with a 6.2-inch screen, 12MP dual camera, 128GB storage, and a 4000mAh battery."
+  },
+  {
+    "id": 3,
+    "name": "Wireless Headphones",
+    "category": "Audio",
+    "brand": "SoundBeats",
+    "price": 149.99,
+    "stock": 30,
+    "image": "https://images.unsplash.com/photo-1718070477385-eed35e367ec8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHx8",
+    "description": "High-quality wireless headphones with over-ear design, 20 hours of battery life, and a sleek black color."
+  },
+  {
+    "id": 4,
+    "name": "Watches",
+    "category": "Wearables",
+    "brand": "FitTech",
+    "price": 199.99,
+    "stock": 20,
+    "image": "https://images.unsplash.com/photo-1717765697742-6b2f48f4a1fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHx8",
+    "description": "Smartwatch with a 1.3-inch AMOLED display, water-resistant design, fitness tracking features, and a stylish silver color."
+  },
+  {
+    "id": 5,
+    "name": "Speakers",
+    "category": "Audio",
+    "brand": "SoundBeats",
+    "price": 149.99,
+    "stock": 30,
+    "image": "images/laptop.jpg",
+    "description": "High-quality wireless headphones with over-ear design, 20 hours of battery life, and a sleek black color."
+  },
+  {
+    "id": 6,
+    "name": "Television",
+    "category": "Video",
+    "brand": "Samsung",
+    "price": 199.99,
+    "stock": 20,
+    "image": "images/laptop.jpg",
+    "description": "Smartwatch with a 1.3-inch AMOLED display, water-resistant design, fitness tracking features, and a stylish silver color."
+  },
+  {
+    "id": 7,
+    "name": "Tablet",
+    "category": "Computers",
+    "brand": "ExampleBrand",
+    "price": 299.99,
+    "stock": 75,
+    "description": "Lightweight tablet with a 10-inch display, 64GB storage, and long battery life.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Gaming Console",
+    "category": "Gaming",
+    "brand": "GameTech",
+    "price": 399.99,
+    "stock": 40,
+    "description": "Next-gen gaming console with 4K support and a wide range of exclusive games.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Camera",
+    "category": "Photography",
+    "brand": "CamPro",
+    "price": 599.99,
+    "stock": 25,
+    "description": "DSLR camera with 24.1MP sensor, 18-55mm lens, and built-in Wi-Fi.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Smart Home Hub",
+    "category": "Smart Home",
+    "brand": "HomeControl",
+    "price": 99.99,
+    "stock": 50,
+    "description": "Smart home hub with voice control and compatibility with various smart home devices.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Fitness Tracker",
+    "category": "Wearables",
+    "brand": "FitTech",
+    "price": 69.99,
+    "stock": 60,
+    "description": "Fitness tracker with heart rate monitoring, sleep tracking, and waterproof design.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Bluetooth Speaker",
+    "category": "Audio",
+    "brand": "SoundBeats",
+    "price": 89.99,
+    "stock": 80,
+    "description": "Portable Bluetooth speaker with 360-degree sound and 12 hours of battery life.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Drone",
+    "category": "Photography",
+    "brand": "FlyHigh",
+    "price": 499.99,
+    "stock": 15,
+    "description": "4K camera drone with GPS, follow-me mode, and 30 minutes of flight time.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 14,
+    "name": "External Hard Drive",
+    "category": "Computers",
+    "brand": "DataGuard",
+    "price": 129.99,
+    "stock": 100,
+    "description": "2TB external hard drive with USB 3.0 and fast data transfer speeds.",
+    "image": "images/hdd.jpg"
+  },
+  {
+    "id": 15,
+    "name": "VR Headset",
+    "category": "Gaming",
+    "brand": "VirtualWorld",
+    "price": 299.99,
+    "stock": 35,
+    "description": "Immersive VR headset with high-resolution display and wide field of view.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Action Camera",
+    "category": "Photography",
+    "brand": "AdventureCam",
+    "price": 199.99,
+    "stock": 50,
+    "description": "Waterproof action camera with 4K recording and image stabilization.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Wireless Mouse",
+    "category": "Computers",
+    "brand": "TechPeripherals",
+    "price": 29.99,
+    "stock": 100,
+    "description": "Wireless mouse with ergonomic design and long battery life.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Portable Monitor",
+    "category": "Computers",
+    "brand": "TechDisplays",
+    "price": 199.99,
+    "stock": 25,
+    "description": "Portable monitor with 15.6-inch display, USB-C connectivity, and Full HD resolution.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Smart Bulb",
+    "category": "Smart Home",
+    "brand": "HomeControl",
+    "price": 19.99,
+    "stock": 50,
+    "description": "Smart LED bulb with adjustable brightness and color temperature.",
+    "image": "images/mouse.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Wireless Keyboard",
+    "category": "Computers",
+    "brand": "TechPeripherals",
+    "price": 49.99,
+    "stock": 75,
+    "description": "Wireless keyboard with full-size layout and quiet keys.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Smart Plug",
+    "category": "Smart Home",
+    "brand": "HomeControl",
+    "price": 14.99,
+    "stock": 100,
+    "description": "Smart plug with remote control and energy monitoring features.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 22,
+    "name": "Security Camera",
+    "category": "Smart Home",
+    "brand": "HomeSecure",
+    "price": 79.99,
+    "stock": 30,
+    "description": "Indoor security camera with 1080p resolution, night vision, and motion detection.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Smart Thermostat",
+    "category": "Smart Home",
+    "brand": "HomeControl",
+    "price": 129.99,
+    "stock": 20,
+    "description": "Smart thermostat with Wi-Fi connectivity and voice control compatibility.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Robot Vacuum",
+    "category": "Smart Home",
+    "brand": "HomeClean",
+    "price": 249.99,
+    "stock": 10,
+    "description": "Robot vacuum with smart navigation, self-charging, and app control.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 25,
+    "name": "Smart Scale",
+    "category": "Smart Home",
+    "brand": "FitTech",
+    "price": 39.99,
+    "stock": 50,
+    "description": "Smart scale with body composition analysis and Bluetooth connectivity.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Smart Doorbell",
+    "category": "Smart Home",
+    "brand": "HomeSecure",
+    "price": 149.99,
+    "stock": 15,
+    "description": "Smart doorbell with HD camera, two-way audio, and motion detection.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 27,
+    "name": "Smart Lock",
+    "category": "Smart Home",
+    "brand": "HomeSecure",
+    "price": 99.99,
+    "stock": 25,
+    "description": "Smart lock with keyless entry, remote access, and activity log.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 28,
+    "name": "Smart Mirror",
+    "category": "Smart Home",
+    "brand": "HomeControl",
+    "price": 199.99,
+    "stock": 5,
+    "description": "Smart mirror with built-in display, voice assistant, and weather updates.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 29,
+    "name": "Smart Fridge",
+    "category": "Smart Home",
+    "brand": "HomeControl",
+    "price": 999.99,
+    "stock": 2,
+    "description": "Smart fridge with touchscreen display, food tracking, and meal suggestions.",
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 30,
+    "name": "Smart Microwave",
+    "category": "Smart Home",
+    "brand": "HomeControl",
+    "price": 149.99,
+    "stock": 10,
+    "description": "Smart microwave with voice control, cooking presets, and sensor cooking.",
+    "image": "images/laptop.jpg"
+  }
+  
+]
