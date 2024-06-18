@@ -9,7 +9,7 @@ export const addtocart = (e, index, price) => {
   let localStorageData = localStorageUpdate();
 
   let quantity = parseInt(card.querySelector('.productQuantity').textContent);
-  let totalPrice = quantity * price;
+  let totalPrice = (quantity * price).toFixed(2);
 
   // to check if there is the items already present in the local storage or not
   let existingProduct = localStorageData.filter((data) => {
@@ -20,7 +20,7 @@ export const addtocart = (e, index, price) => {
 
   if (existingProduct.length > 0 && quantity > 0) {
     quantity = existingProduct[0].quantity + quantity;
-    totalPrice = parseInt(price * quantity).toFixed(2);
+    totalPrice = (parseInt(price * quantity)).toFixed(2);
     let updatedData = { index, quantity, totalPrice };
 
     // updating the local storage if the item is already present then only update it price or if not add the whole product
