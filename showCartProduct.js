@@ -6,8 +6,14 @@ import { localStorageUpdate } from './localStorageUpdate';
 import { updateNabbarCount } from './updateNabbarCount';
 import { updateTotalprice } from './updateTotalprice';
 
+
+let array = JSON.parse(localStorage.getItem('AddedProduct')) || [];
+let UpdatedProduct = [...product, ...array];
+
 let CurLSdata = localStorageUpdate();
-let FilterData = product.filter((items) => CurLSdata.some((data) => items.id === data.index));
+let FilterData = UpdatedProduct.filter((items) =>
+  CurLSdata.some((data) => items.id === data.index)
+);
 
 // console.log(FilterData);
 

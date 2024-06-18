@@ -5,7 +5,7 @@
 }
 
 
-:root {
+/* :root {
     font-family: "Urbanist", sans-serif;
     line-height: 1.5;
     font-weight: 400;
@@ -25,7 +25,9 @@
     --main-color: #535bf2;
     --supporting-color: #ebf3fe;
     --glow-color: hsl(186, 91%, 4%);
-}
+} */
+
+
 
 .section-navabar {
     width: 100%;
@@ -51,7 +53,7 @@
 
 .sign_up_log_in a {
     color: #ffffff;
-    margin-left: 15px;
+    margin-right:60px;
     text-decoration: none;
     font-size: 20px;
 }
@@ -366,7 +368,7 @@ hr {
 #productContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding-left: 50px;
     padding-right: 50px;
     margin: 50px 0;
@@ -404,7 +406,7 @@ hr {
     height: 320px;
     /* height: auto; */
     width: 250px;
-    object-fit: contain;
+    /* object-fit: contain; */
     border-radius: 8px;
 }
 
@@ -548,6 +550,7 @@ hr {
         padding-left: 20px;
         padding-right: 20px;
     }
+
 
     .cards {
         width: 48%;
