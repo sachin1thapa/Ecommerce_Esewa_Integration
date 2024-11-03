@@ -1,4 +1,5 @@
-import products from './api/product.json';
+import { product } from '../api/product.js';
+
 let array = JSON.parse(localStorage.getItem('AddedProduct')) || [];
 
 change();
@@ -22,6 +23,6 @@ document.querySelector('form').addEventListener('submit', (e) => {
 });
 
 function change() {
-  let length = products.length + 1 + array.length;
+  let length = product.length + 1 + array.length;
   document.querySelector('#id').value = length;
 }

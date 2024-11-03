@@ -1,6 +1,6 @@
-import { localStorageUpdate } from './localStorageUpdate';
-import { tooglepopUp } from './tooglepopUp';
-import { updateNabbarCount } from './updateNabbarCount';
+import { localStorageUpdate } from './localStorageUpdate.js';
+import { tooglepopUp } from './tooglepopUp.js';
+import { updateNabbarCount } from './updateNabbarCount.js';
 
 export const addtocart = (e, index, price) => {
   let card = document.querySelector(`#card${index}`);

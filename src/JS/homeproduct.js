@@ -1,9 +1,9 @@
 //*  https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
 // !templete le fragment banau cha
 
-import { addtocart } from './addtocart';
-import { tooglestock } from './tooglestock';
-import { updateNabbarCount } from './updateNabbarCount';
+import { addtocart } from './addtocart.js';
+import { tooglestock } from './tooglestock.js';
+import { updateNabbarCount } from './updateNabbarCount.js';
 
 const productContainer = document.querySelector('#productContainer');
 const template = document.querySelector('#productTemplate');

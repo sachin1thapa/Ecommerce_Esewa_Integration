@@ -1,4 +1,4 @@
-import { localStorageUpdate } from './localStorageUpdate';
+import { localStorageUpdate } from './localStorageUpdate.js';
 
 export const fetchLSdata = (index) => {
   let lsdata = localStorageUpdate();

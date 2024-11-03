@@ -1,4 +1,4 @@
-import { localStorageUpdate } from './localStorageUpdate';
+import { localStorageUpdate } from './localStorageUpdate.js';
 
 export const updateTotalprice = () => {
   const totalPrice = document.querySelector('.summary-item:nth-child(1) span');

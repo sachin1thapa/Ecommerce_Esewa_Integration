@@ -1,5 +1,5 @@
-import { localStorageUpdate } from './localStorageUpdate';
-import { updateTotalprice } from './updateTotalprice';
+import { localStorageUpdate } from './localStorageUpdate.js';
+import { updateTotalprice } from './updateTotalprice.js';
 
 export const CartIncrementDecrement = (e, index, price, stock, id) => {
   let product = document.querySelector(`#card${index + 1}`);

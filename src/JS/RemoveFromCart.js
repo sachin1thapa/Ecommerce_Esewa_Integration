@@ -1,6 +1,6 @@
-import { localStorageUpdate } from './localStorageUpdate';
-import { updateNabbarCount } from './updateNabbarCount';
-import { updateTotalprice } from './updateTotalprice';
+import { localStorageUpdate } from './localStorageUpdate.js';
+import { updateNabbarCount } from './updateNabbarCount.js';
+import { updateTotalprice } from './updateTotalprice.js';
 
 export const RemoveFromCart = (e, index, id) => {
   const card = document.querySelector(`#card${index}`);

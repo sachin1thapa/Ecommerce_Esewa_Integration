@@ -1,4 +1,4 @@
-import { updateNabbarCount } from "./updateNabbarCount";
+import { updateNabbarCount } from "./updateNabbarCount.js";
 
 updateNabbarCount();
 

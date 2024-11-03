@@ -1,10 +1,11 @@
-import product from './api/product.json';
-import { CartIncrementDecrement } from './CartIncrementDecrement';
-import { RemoveFromCart } from './RemoveFromCart';
-import { fetchLSdata } from './fetchLSdata';
-import { localStorageUpdate } from './localStorageUpdate';
-import { updateNabbarCount } from './updateNabbarCount';
-import { updateTotalprice } from './updateTotalprice';
+
+import { product } from '../api/product.js';
+import { CartIncrementDecrement } from './CartIncrementDecrement.js';
+import { RemoveFromCart } from './RemoveFromCart.js';
+import { fetchLSdata } from './fetchLSdata.js';
+import { localStorageUpdate } from './localStorageUpdate.js';
+import { updateNabbarCount } from './updateNabbarCount.js';
+import { updateTotalprice } from './updateTotalprice.js';
 
 
 let array = JSON.parse(localStorage.getItem('AddedProduct')) || [];
