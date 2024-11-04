@@ -1,55 +1,40 @@
 import { localStorageUpdate } from './localStorageUpdate.js';
 import { tooglepopUp } from './tooglepopUp.js';
-import { updateNabbarCount } from './updateNabbarCount.js';
+import { updateNavbarCount } from './updateNavbarCount.js';
 
 export const addtocart = (e, index, price) => {
-  let card = document.querySelector(`#card${index}`);
+  const card = document.querySelector(`#card${index}`);
   if (!card) return;
 
   let localStorageData = localStorageUpdate();
-
   let quantity = parseInt(card.querySelector('.productQuantity').textContent);
   let totalPrice = (quantity * price).toFixed(2);
 
-  // to check if there is the items already present in the local storage or not
-  let existingProduct = localStorageData.filter((data) => {
-    if (data.index === index) return data;
-  });
+  // Check if the item already exists in localStorage
+  let existingProduct = localStorageData.find((data) => data.index === index);
 
-  // update the local storage by only updating the value not adding the items
+  if (existingProduct && quantity > 0) {
+   
+    quantity += existingProduct.quantity;
+    totalPrice = (price * quantity).toFixed(2);
 
-  if (existingProduct.length > 0 && quantity > 0) {
-    quantity = existingProduct[0].quantity + quantity;
-    totalPrice = (parseInt(price * quantity)).toFixed(2);
-    let updatedData = { index, quantity, totalPrice };
+    // update the data in the ls 
+    const updatedData = localStorageData.map((item) =>
+      item.index === index ? { index, quantity, totalPrice } : item
+    );
 
-    // updating the local storage if the item is already present then only update it price or if not add the whole product
-    let update = localStorageData.map((items) => {
-      if (items.index === index) {
-        return updatedData;
-      } else {
-        return items;
-      }
-    });
-    // console.log(update);
-
-    updatedata(card, update);
-  }
-
-  if (existingProduct.length > 0) return;
-
-  // first time push garda
-  localStorageData.push({ index, quantity, totalPrice });
-  if (quantity !== 0) localStorageUpdate(localStorageData);
-  updatedata(card);
-
-  function updatedata(card, update) {
-    if (quantity > 0) tooglepopUp(card);
-    updateNabbarCount();
-    card.querySelector('.productQuantity').textContent = '0';
-    if (update) {
-      localStorageUpdate(update);
-      // console.log('inside upadte');
-    }
+    updateCartData(card, updatedData); 
+  } else if (!existingProduct && quantity > 0) {
+    localStorageData.push({ index, quantity, totalPrice });
+    updateCartData(card, localStorageData); 
   }
 };
+
+
+function updateCartData(card, updatedData) {
+  localStorageUpdate(updatedData); 
+  tooglepopUp(card); 
+  updateNavbarCount(); 
+
+  card.querySelector('.productQuantity').textContent = '0';
+}

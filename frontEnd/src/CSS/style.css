@@ -32,7 +32,7 @@
 .section-navabar {
     width: 100%;
     background-color: #f8f9fa;
-    
+
     /* position: absolute; */
 }
 
@@ -53,7 +53,7 @@
 
 .sign_up_log_in a {
     color: #ffffff;
-    margin-right:60px;
+    margin-right: 60px;
     text-decoration: none;
     font-size: 20px;
 }
@@ -70,7 +70,7 @@
     padding: 15px 0;
     /* border-top: 5px solid red;
     border-bottom: 5px solid red; */
-    
+
 }
 
 
@@ -106,7 +106,7 @@
 
 .body-part {
     margin-top: 10px;
-   
+
     height: 80vh;
     display: flex;
     align-items: center;
@@ -450,7 +450,7 @@ hr {
 .productStockElement {
     display: flex;
     /* justify-content: space-between; */
-    gap:10px;
+    gap: 10px;
     margin-bottom: 8px;
 }
 
@@ -519,7 +519,7 @@ hr {
     margin-right: 8px;
 }
 
-.common-heading{
+.common-heading {
     text-align: center;
     margin-bottom: 20px;
     font-size: 24px;
@@ -527,13 +527,15 @@ hr {
     font-size: xx-large;
 }
 
-.product-heading{
- padding-top: 30px;;
+.product-heading {
+    padding-top: 30px;
+    ;
 }
 
 
 /* Responsive design */
 @media screen and (max-width: 1200px) {
+
     .content_1,
     .content_2,
     .content_3,
@@ -565,10 +567,10 @@ hr {
     position: relative;
     display: inline-block;
     cursor: pointer;
-  }
+}
 
-  /* The actual popup */
-  .popup .popuptext {
+/* The actual popup */
+.popup .popuptext {
     visibility: hidden;
     width: 160px;
     background-color: #555;
@@ -583,10 +585,10 @@ hr {
     margin-left: -80px;
     opacity: 0;
     transition: opacity 0.3s ease;
-  }
+}
 
-  /* Popup arrow */
-  .popup .popuptext::after {
+/* Popup arrow */
+.popup .popuptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -595,35 +597,37 @@ hr {
     border-width: 5px;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
-  }
+}
 
-  /* Show popup */
-  .popup.show .popuptext {
+/* Show popup */
+.popup.show .popuptext {
     visibility: visible;
     opacity: 1;
     animation: fadeIn 0.5s ease forwards;
-  }
+}
 
-  /* Keyframes for fade-in */
-  @keyframes fadeIn {
+/* Keyframes for fade-in */
+@keyframes fadeIn {
     from {
-      opacity: 0;
-      transform: translateY(10px);
+        opacity: 0;
+        transform: translateY(10px);
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
-  /* Keyframes for fade-out */
-  @keyframes fadeOut {
-    from {
-      opacity: 1;
-      transform: translateY(0);
-    }
     to {
-      opacity: 0;
-      transform: translateY(10px);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
+}
+
+/* Keyframes for fade-out */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}

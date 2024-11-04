@@ -1,19 +1,22 @@
 import { localStorageUpdate } from './localStorageUpdate.js';
-
 export const updateTotalprice = () => {
-  const totalPrice = document.querySelector('.summary-item:nth-child(1) span');
-  const shippingprice = document.querySelector('.summary-item:nth-child(2) span ');
-  const taxPrice = document.querySelector('#line span');
-  const finalTotalPrice = document.querySelector('.summary-item:nth-child(4) span');
+  const totalPriceElement = document.querySelector('.summary-item:nth-child(1) span');
+  const shippingPriceElement = document.querySelector('.summary-item:nth-child(2) span');
+  const taxPriceElement = document.querySelector('#line span');
+  const finalTotalPriceElement = document.querySelector('.summary-item:nth-child(4) span');
+
+  const shippingCost = 100;
+  const taxCost = 30;
 
   let data = localStorageUpdate();
-  // console.log(data);
-  const sumPrice = data.reduce((acc, currval) => acc + Number(currval.totalPrice), 0);
+  const sumPrice = data.reduce((acc, { totalPrice }) => acc + Number(totalPrice), 0);
 
-  const datalength = data.length > 0;
-  totalPrice.textContent = datalength ? `$${Math.floor(sumPrice)}` : `0`;
-  shippingprice.textContent = datalength ? '$100' : '0';
-  taxPrice.textContent = datalength ? '$30' : '0';
-  let finalprice = datalength ? Math.floor(sumPrice + 100 + 30) : '0';
-  finalTotalPrice.textContent = `$${Math.floor(finalprice)}`;
+  const hasItems = data.length > 0;
+
+  totalPriceElement.textContent = hasItems ? `$${sumPrice.toFixed(2)}` : '$0.00';
+  shippingPriceElement.textContent = hasItems ? `$${shippingCost.toFixed(2)}` : '$0.00';
+  taxPriceElement.textContent = hasItems ? `$${taxCost.toFixed(2)}` : '$0.00';
+
+  const finalPrice = hasItems ? (sumPrice + shippingCost + taxCost).toFixed(2) : '0.00';
+  finalTotalPriceElement.textContent = `$${finalPrice}`;
 };

@@ -1,5 +1,5 @@
 import { product } from '../api/product.js';
-// import '../CSS/style';
+
 import { homeProductcard } from './homeproduct.js';
 
 let array = JSON.parse(localStorage.getItem('AddedProduct')) || [];

@@ -1,44 +1,50 @@
-//*  https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
-// !templete le fragment banau cha
-
 import { addtocart } from './addtocart.js';
 import { tooglestock } from './tooglestock.js';
-import { updateNabbarCount } from './updateNabbarCount.js';
+import { updateNavbarCount } from './updateNavbarCount.js';
 
 const productContainer = document.querySelector('#productContainer');
 const template = document.querySelector('#productTemplate');
 
 export const homeProductcard = (products) => {
-  if (!products) return;
-  else {
-    products.forEach((product, index) => {
-      const { category, description, image, name, price, stock } = product;
-      const productClone = document.importNode(template.content, true);
-      productClone.querySelector('.category').textContent = category;
-      productClone.querySelector('.productName').textContent = name;
-      productClone.querySelector('.productImage').src = image;
-      productClone.querySelector('.productImage').alt = name;
-      productClone.querySelector('.productStock').textContent = stock;
-      productClone.querySelector('.productDescription').textContent = description;
-      productClone.querySelector('.productPrice').textContent = `$${price}`;
+  if (!Array.isArray(products) || products.length === 0) {
+    console.error('No products available to display.');
+    return;
+  }
 
-      productClone.querySelector('.productActualPrice').textContent = `$${(price * 2).toFixed(2)}`;
+  products.forEach((product, index) => {
+    const { category, description, image, name, price, stock } = product;
 
-      productClone.querySelector('.cards').setAttribute('id', `card${index + 1}`);
+    // Clone the template
+    const productClone = document.importNode(template.content, true);
 
-      // button click
-      productClone.querySelector('.stockElement').addEventListener('click', (e) => {
-        tooglestock(e, index + 1, stock);
-      });
+    // Populate product details
+    productClone.querySelector('.category').textContent = category;
+    productClone.querySelector('.productName').textContent = name;
+    productClone.querySelector('.productImage').src = image;
+    productClone.querySelector('.productImage').alt = name;
+    productClone.querySelector('.productStock').textContent = `Stock: ${stock}`;
+    productClone.querySelector('.productDescription').textContent = description;
+    productClone.querySelector('.productPrice').textContent = `$${price}`;
 
-      // addto cart
+  
+    productClone.querySelector('.productActualPrice').textContent = `$${(price * 2).toFixed(2)}`;
 
-      productClone.querySelector('.add-to-cart-button').addEventListener('click', (e) => {
-        addtocart(e, index + 1, price);
-      });
-      productContainer.append(productClone);
+    
+    productClone.querySelector('.cards').setAttribute('id', `card${index + 1}`);
+
+   
+    productClone.querySelector('.stockElement').addEventListener('click', (e) => {
+      tooglestock(e, index + 1, stock);
     });
 
-    updateNabbarCount();
-  }
+    productClone.querySelector('.add-to-cart-button').addEventListener('click', (e) => {
+      addtocart(e, index + 1, price);
+    });
+
+   
+    productContainer.append(productClone);
+  });
+
+
+  updateNavbarCount();
 };

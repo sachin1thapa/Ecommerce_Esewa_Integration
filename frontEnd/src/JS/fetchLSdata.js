@@ -1,13 +1,11 @@
 import { localStorageUpdate } from './localStorageUpdate.js';
 
 export const fetchLSdata = (index) => {
-  let lsdata = localStorageUpdate();
-  let vakodata = (lsdata = lsdata.find((items) => items.index === index));
-//   console.log(vakodata);
-  let quantity, price;
-  if (vakodata) {
-    price = vakodata.totalPrice;
-    quantity = vakodata.quantity;
+  const lsdata = localStorageUpdate();
+  const itemData = lsdata.find((item) => item.index === index);
+  if (!itemData) {
+    return { price: 0, quantity: 0 };
   }
+  const { totalPrice: price, quantity } = itemData;
   return { price, quantity };
 };

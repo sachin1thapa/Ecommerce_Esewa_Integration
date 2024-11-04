@@ -1,7 +1,6 @@
-import { updateNabbarCount } from "./updateNabbarCount.js";
+import { updateNavbarCount } from './updateNavbarCount.js';
 
-updateNabbarCount();
-
+updateNavbarCount();
 
 let form = document.querySelector('#form');
 form.addEventListener('submit', async (e) => {
@@ -15,10 +14,10 @@ form.addEventListener('submit', async (e) => {
 
   Email.send({
     Host: 'smtp.elasticemail.com',
-    Username: 'thapasachin572@gmail.com',
-    Password: '8C87B3CA6F08E977D71F2E1E3DE56409B33C',
-    To: 'thapasachin572@gmail.com',
-    From: 'thapasachin572@gmail.com',
+    Username: 'test@gmail.com',
+    Password: '',
+    To: 'test@gmail.com',
+    From: 'test@gmail.com',
     Subject: subject,
     Body: body,
   })

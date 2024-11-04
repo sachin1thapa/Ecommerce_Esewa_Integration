@@ -1,22 +1,26 @@
+const ACTION_INCREMENT = '+';
+const ACTION_DECREMENT = '-';
+
 export const tooglestock = (e, index, stock) => {
   e.stopPropagation();
-  let card = document.querySelector(`#card${index}`);
+  const card = document.querySelector(`#card${index}`);
   if (!card) return;
-  else {
-    let itemsAdd = parseInt(card.querySelector('.productQuantity').textContent);
-    if (e.target.textContent === '+') {
-      if (stock > itemsAdd) {
-        itemsAdd++;
-      // card.querySelector('.productQuantity').textContent = itemsAdd;
-      }
-      card.querySelector('.productQuantity').textContent = itemsAdd;
+  let currentQuantity = parseInt(card.querySelector('.productQuantity').textContent);
+
+  if (e.target.textContent === ACTION_INCREMENT) {
+    if (currentQuantity < stock) {
+      currentQuantity++;
+    } else {
+      console.log('Cannot add more items than available stock.');
     }
-    if (e.target.textContent === '-') {
-      if (itemsAdd > 0) {
-        itemsAdd--;
-        // card.querySelector('.productQuantity').textContent = itemsAdd;
-      }
-      card.querySelector('.productQuantity').textContent = itemsAdd;
+  } else if (e.target.textContent === ACTION_DECREMENT) {
+    if (currentQuantity > 0) {
+      currentQuantity--;
+    } else {
+      console.log('Quantity cannot be less than zero.');
     }
   }
+
+
+  card.querySelector('.productQuantity').textContent = currentQuantity;
 };

@@ -130,7 +130,7 @@
     border-radius: 8px;
     background-color: #f9f9f9;
     width: 40%;
-    margin: 0 auto 200px auto;
+    margin: 0 auto 20px auto;
     font-size: 20px;
     gap: 10px;
 
@@ -149,4 +149,27 @@
 
 .summary-item span {
     font-weight: bold;
+}
+
+.paywithesewa {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.paywithesewa button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    /* Green background */
+    border: 1px solid;
+    border-color: #3e8e41;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.paywithesewa button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
 }

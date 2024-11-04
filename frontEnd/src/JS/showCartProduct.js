@@ -1,31 +1,34 @@
-
 import { product } from '../api/product.js';
 import { CartIncrementDecrement } from './CartIncrementDecrement.js';
 import { RemoveFromCart } from './RemoveFromCart.js';
 import { fetchLSdata } from './fetchLSdata.js';
 import { localStorageUpdate } from './localStorageUpdate.js';
-import { updateNabbarCount } from './updateNabbarCount.js';
+import { updateNavbarCount } from './updateNavbarCount.js';
 import { updateTotalprice } from './updateTotalprice.js';
-
-
-let array = JSON.parse(localStorage.getItem('AddedProduct')) || [];
-let UpdatedProduct = [...product, ...array];
-
-let CurLSdata = localStorageUpdate();
-let FilterData = UpdatedProduct.filter((items) =>
-  CurLSdata.some((data) => items.id === data.index)
-);
-
-// console.log(FilterData);
 
 const productContainer = document.querySelector('.cart-container');
 const template = document.querySelector('#productTemplate');
+let CurLSdata = localStorageUpdate();
 
-if (product && FilterData) {
-  FilterData.forEach((products, index) => {
-    const { category, image, name, price, stock, id } = products;
+// Merge and filter products from API and local storage
+function getFilteredProducts() {
+  const addedProducts = JSON.parse(localStorage.getItem('AddedProduct')) || [];
+  const updatedProductList = [...product, ...addedProducts];
+
+  return updatedProductList.filter((item) => CurLSdata.some((data) => item.id === data.index));
+}
+
+// Render cart items
+function renderCartItems() {
+  const FilterData = getFilteredProducts();
+  if (!FilterData) return;
+
+  const fragment = document.createDocumentFragment();
+
+  FilterData.forEach((productItem, index) => {
+    const { category, image, name, price, stock, id } = productItem;
     let LSdata = fetchLSdata(id, price);
-    // console.log(LSdata);
+
     const productClone = document.importNode(template.content, true);
     productClone.querySelector('.cart-item-category').textContent = category;
     productClone.querySelector('.cart-item-name').textContent = name;
@@ -34,39 +37,76 @@ if (product && FilterData) {
     productClone.querySelector('#quantity').textContent = LSdata.quantity;
     productClone.querySelector('.cart-item-price').textContent = `$${LSdata.price}`;
 
-    productClone.querySelector('.cart-item').setAttribute('id', `card${index + 1}`);
+    const cartItemElement = productClone.querySelector('.cart-item');
+    cartItemElement.setAttribute('id', `card${index + 1}`);
 
-    // console.log(productClone.querySelector('.cart-item'));
+    // Event listeners
+    productClone
+      .querySelector('.cart-item-quantity')
+      .addEventListener('click', (e) => CartIncrementDecrement(e, index, price, stock, id));
+    productClone
+      .querySelector('.cart-item-remove')
+      .addEventListener('click', (e) => RemoveFromCart(e, index + 1, id));
 
-    // button click garda
-    productClone.querySelector('.cart-item-quantity').addEventListener('click', (e) => {
-      CartIncrementDecrement(e, index, price, stock, id);
-    });
-
-    // remove the product from the cart
-    productClone.querySelector('.cart-item-remove').addEventListener('click', (e) => {
-      RemoveFromCart(e, index + 1, id);
-    });
-
-    productContainer.append(productClone);
+    fragment.appendChild(productClone);
   });
+
+  productContainer.appendChild(fragment);
 }
 
-updateNabbarCount();
-updateTotalprice();
+// Handle payment initiation
+async function initiatePayment(e) {
+  e.preventDefault();
+  const CurLSdata = localStorageUpdate();
+  const amount = Number(document.getElementById('amount').textContent.replace('$', ''));
+  const mergedData = CurLSdata.map((item) => {
+    const product = getFilteredProducts().find((p) => p.id === item.index);
+    return {
+      name: product.name,
+      category: product.category,
+      brand: product.brand,
+      price: product.price,
+      image: product.image,
+      description: product.description,
+      quantity: item.quantity,
+    };
+  });
 
-// ! different filtering techniques
-// let FilterData = product.filter((e) => {
-//   return CurLSdata.some((items) => e.id === items.index);
-// });
+  const paymentData = {
+    amount: amount,
+    products: mergedData,
+    productId: generateUniqueId(),
+  };
 
-// let index = CurLSdata.map((e) => {
-//   return e.index;
-// });
+  console.log('Amount:', amount);
+  console.log('Merged Data:', mergedData);
+  console.log('Payment Data:', paymentData);
 
-// let FilterData = product.filter((e) => indexList.includes(e.id));
-// let x = product.reduce((acc, e) => {
-//   if (CurLSdata.some((items) => items.index === e.id)) acc.push(e);
-//   return acc;
-// }, []);
-// console.log(x);
+
+  try {
+    const response = await fetch('http://localhost:3000/initiate-payment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(paymentData),
+    });
+    const data = await response.json();
+    console.log(data);
+    if (data.url) window.location.href = data.url;
+  } catch (error) {
+    console.error('Error initiating payment:', error);
+    window.alert('Error initiating payment. Please try again later.');
+  }
+}
+
+
+function generateUniqueId() {
+  return `id-${Date.now()}-${Math.random().toString(36).substring(2, 11)}`;
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderCartItems();
+  updateNavbarCount();
+  updateTotalprice();
+  document.getElementById('paymentForm').addEventListener('submit', initiatePayment);
+});

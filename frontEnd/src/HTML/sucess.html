@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Status</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <style>
+        .go-home-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="Header"></div>
+    <div id="loading">
+        <p>Loading...</p>
+    </div>
+
+    <div id="success" style="display: none;">
+        <h1>Payment Successful!</h1>
+        <p>Thank you for your payment. Your transaction was successful.</p>
+        <button onclick="navigateToHome()" class="go-home-button">Go to Homepage</button>
+    </div>
+
+    <div id="error" style="display: none;">
+        <h1>Oops!..Error occurred on confirming payment</h1>
+        <h2>We will resolve it soon.</h2>
+        <button onclick="navigateToHome()" class="go-home-button">Go to Homepage</button>
+    </div>
+    <div class="footer"></div>
+</body>
+<script type="module" src="../JS/Header.js"></script>
+
+<script type="module" src="../JS/sucessEsewa.js"></script>
+<script>
+    function navigateToHome() {
+        window.location.href = `${window.location.origin}/frontend/index.html`;
+    }
+</script>
+
+</html>

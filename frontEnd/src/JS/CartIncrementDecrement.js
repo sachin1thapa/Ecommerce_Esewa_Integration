@@ -2,42 +2,42 @@ import { localStorageUpdate } from './localStorageUpdate.js';
 import { updateTotalprice } from './updateTotalprice.js';
 
 export const CartIncrementDecrement = (e, index, price, stock, id) => {
-  let product = document.querySelector(`#card${index + 1}`);
-  if (!product) {
-    return;
+  const product = document.querySelector(`#card${index + 1}`);
+  if (!product) return;
+
+  let quantity = parseInt(product.querySelector('#quantity').textContent);
+  const LSdata = localStorageUpdate();
+
+ 
+  const isIncrement = e.target.textContent === '+';
+
+  if (isIncrement && quantity < stock) {
+    quantity++;
+  } else if (!isIncrement && quantity > 1) {
+    quantity--;
   } else {
-    let Quantity = parseInt(product.querySelector('#quantity').textContent);
-    let LSdata = localStorageUpdate();
-    // console.log(Quantity);
-
-    if (e.target.textContent === '+') {
-      if (stock > Quantity) {
-        Quantity++;
-      }
-      let updatePrice = (price * Quantity).toFixed(2);
-      product.querySelector('#quantity').textContent = Quantity;
-      product.querySelector('.cart-item-price').textContent = `$${updatePrice}`;
-
-      //! update data lai  local storage ma save garne
-      LS(id, Quantity, updatePrice, LSdata);
-      updateTotalprice();
-    }
-    if (e.target.textContent === '-') {
-      if (Quantity > 1) {
-        Quantity--;
-      }
-      let updatePrice = (price * Quantity).toFixed(2);
-      product.querySelector('#quantity').textContent = Quantity;
-      product.querySelector('.cart-item-price').textContent = `$${updatePrice}`;
-      LS(id, Quantity, updatePrice, LSdata);
-      updateTotalprice();
-    }
+    return; 
   }
+
+
+  const updatedPrice = (price * quantity).toFixed(2);
+  updateProductUI(product, quantity, updatedPrice);
+
+
+  updateLocalStorage(id, quantity, updatedPrice, LSdata);
+  updateTotalprice();
 };
 
-function LS(id, Quantity, updatePrice, LSdata) {
-  let updatelSdata = LSdata.map((items) => {
-    return items.index === id ? { index: id, quantity: Quantity, totalPrice: updatePrice } : items;
-  });
-  localStorageUpdate(updatelSdata);
+
+function updateProductUI(product, quantity, updatedPrice) {
+  product.querySelector('#quantity').textContent = quantity;
+  product.querySelector('.cart-item-price').textContent = `$${updatedPrice}`;
+}
+
+
+function updateLocalStorage(id, quantity, updatedPrice, LSdata) {
+  const updatedData = LSdata.map((item) =>
+    item.index === id ? { index: id, quantity, totalPrice: updatedPrice } : item
+  );
+  localStorageUpdate(updatedData);
 }

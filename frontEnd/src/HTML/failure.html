@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Failure</title>
+    <style>
+        .go-home-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        body {
+            text-align: center;
+            margin-top: 20%;
+        }
+    </style>
+    <script>
+        // Function to handle redirection to homepage
+        function navigateToHome() {
+            window.location.href = `${window.location.origin}/frontend/index.html`;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="Header"></div>
+    <div>
+        <h1>Payment Failed!</h1>
+        <p>There was an issue with your payment. Please try again.</p>
+        <button onclick="navigateToHome()" class="go-home-button">Go to Homepage</button>
+    </div>
+</body>
+
+<script type="module" src="../JS/Header.js"></script>
+
+</html>
